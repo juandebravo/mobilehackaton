@@ -1,12 +1,11 @@
-
 ## General aspects
 
 * All the API requests that contain a body must encode it using the JSON format (and include the relevant HTTP Header).
 * All the API responses will be encoded using the JSON format.
 * The API will use the standard HTTP Status codes to notify the client about the request result:
-* Endpoint: https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
+* *Endpoint*: https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
 * Every response will have two elements in the JSON object: **_id** and **_rev**
-* Relevant data will be included in a *data* element
+* IMPORTANT: Relevant data will be included in a *data* element
 
 ```
 curl https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
