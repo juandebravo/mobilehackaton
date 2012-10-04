@@ -5,7 +5,6 @@
 * The API will use the standard HTTP Status codes to notify the client about the request result:
 * *Endpoint*: https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
 * Every response will have two elements in the JSON object: **_id** and **_rev**
-* IMPORTANT: Relevant data will be included in a *data* element
 
 ```
 curl https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
@@ -14,8 +13,8 @@ curl https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
 ### Create a new organization
 
 ```
-POST /organizations
-    data: {"organizations": ["name1", "name2"]}
+POST /
+    data: {"_id": "organizations", "organizations": ["name1", "name2"]}
 ```
 
 Example:
@@ -43,13 +42,14 @@ curl -i https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton/organizat
 ### Create organization data
 
 ```
-POST /organizations/<organization>
+POST /
+    data: {"_id": "organizations_<organization>", "data": {}}
 ```
 
 Example:
 
 ```
-curl -i -H 'Content-Type: application/json' -d '{"_id": "organizations_telefonicaid", "data":{"users":[{"pepito":{"points": 30,"badges":[{"padowan":"20121002"},{"adventurer":"20121001"}]}}]}}' https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
+curl -i -H 'Content-Type: application/json' -d '{"_id": "organizations_telefonicaid", "users":[{"pepito":{"points": 30,"badges":[{"padowan":"20121002"},{"adventurer":"20121001"}]}}]}' https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
 ```
 
 
@@ -78,7 +78,7 @@ curl https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton/organization
 ### Get user extend data
 
 ```
-GET /organizations/<organization>/users/<user>
+GET /organizations_<organization>_users_<user>
     {"points":
         {
             "20121001": {
