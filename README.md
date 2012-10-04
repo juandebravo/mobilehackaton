@@ -52,8 +52,6 @@ Example:
 curl -i -H 'Content-Type: application/json' -d '{"_id": "organizations_telefonicaid", "users":[{"pepito":{"points": 30,"badges":[{"padowan":"20121002"},{"adventurer":"20121001"}]}}]}' https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton
 ```
 
-
-
 ### Get organization data
 
 ```
