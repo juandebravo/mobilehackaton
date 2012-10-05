@@ -59,6 +59,7 @@ GET /organizations_<organization>
     {"users":[
         {"login: "pepito",
          "points": 30,
+         "rank": 1,
          "badges": [{"padowan": "20121002"},
                        {adventurer": "20121001"}]
         }
@@ -76,25 +77,23 @@ curl https://juandebravo:hackaton@juandebravo.cloudant.com/hackaton/organization
 ```
 GET /organizations_<organization>_users_<user>
     {"points":
-        {
-            "20121001": {
-                "points": 10,
-                "rank": 1
+        [
+            {"date":"20121001",
+             "points": 10,
+             "rank": 1
             },
-            "20121002": {
-                "points": -1,
-                "rank": 2
-            },
-            "20120930": {
-                "points": 20,
-                "rank": 1
-            },
-        },
+            {"date":"20121002",
+             "points": 5,
+             "rank": 2
+            }
+        ],
      "badges":
-        {
-            "20121002": "padowan",
-            "20121001": "adventurer"
-        }
+        [
+           {
+               "name": "padowan",
+               "date": "20121002"
+           }
+        ]
     }
 
 ```
