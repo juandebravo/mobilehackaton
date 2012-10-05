@@ -57,12 +57,10 @@ curl -i -H 'Content-Type: application/json' -d '{"_id": "organizations_telefonic
 ```
 GET /organizations_<organization>
     {"users":[
-        {"pepito":
-            {
-            "points": 30,
-            "badges": [{"padowan": "20121002"},
+        {"login: "pepito",
+         "points": 30,
+         "badges": [{"padowan": "20121002"},
                        {adventurer": "20121001"}]
-            }
         }
     ]}
 ```
